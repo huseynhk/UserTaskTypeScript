@@ -1,0 +1,50 @@
+body {
+  background-color: #012b36;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;
+}
+body::-webkit-scrollbar-track {
+  background: #8ff3fe;
+  border-radius: 5px;
+}
+body::-webkit-scrollbar-thumb {
+  background: #1ce1ff;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #00ccff;
+}
+
+.role-cell.admin {
+  color: green;
+}
+
+.role-cell.moderator {
+  color: blue;
+}
+
+.role-cell.user {
+  color: red;
+}
+
+.eye-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.eye-icon:hover {
+  transform: scale(1.1);
+}
+.imgParent {
+  min-height: 100px;
+  max-height: 100px;
+}
+.imgCard {
+  object-fit: cover;
+  width: 300px;
+  height: 75px;
+  border-radius: 10px;
+}

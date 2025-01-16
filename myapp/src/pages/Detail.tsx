@@ -10,13 +10,17 @@ const UserDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [userDetail, setUserDetail] = useState<UserDetail | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const fetchSingleUser = async () => {
     try {
+      setLoading(true);
       const response = await GetSingleUser(Number(id));
       setUserDetail(response);
     } catch (error) {
       console.error("Error fetching user:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -26,8 +30,24 @@ const UserDetailPage: React.FC = () => {
     }
   }, [id]);
 
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center">
+        <Spinner
+          animation="border"
+          style={{ color: "#8ff3fe", fontSize: "24px", marginTop: "30vh" }}
+        />
+      </div>
+    );
+  }
+
   if (!userDetail) {
-    return <Spinner animation="border" />;
+    return (
+      <Spinner
+        animation="border"
+        style={{ color: "#8ff3fe", fontSize: "24px", marginTop: "10vh" }}
+      />
+    );
   }
 
   return (

@@ -48,7 +48,7 @@ const Manager: React.FC = () => {
         Users Table
       </h2>
       {loading ? (
-        <Spinner animation="border" />
+        <Spinner animation="border"  style={{ color: "#8ff3fe", fontSize:"24px", marginTop:"10vh" }} />
       ) : (
         <UserTable datas={datas} getRoleStyle={getRoleStyle} />
       )}

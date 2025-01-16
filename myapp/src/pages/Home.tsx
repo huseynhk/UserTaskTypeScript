@@ -42,6 +42,7 @@ const Manager: React.FC = () => {
     }
   };
 
+  
   return (
     <div className="text-center px-5 py-3">
       <h2 className="mb-3" style={{ color: "#8ff3fe" }}>
